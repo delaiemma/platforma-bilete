@@ -1,0 +1,187 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(245, 245, 245, 0.95);
+    border: 1px solid #ddd;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    z-index: 9999;
+    animation: slideUp 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.closeBtn:hover {
+    color: #333;
+}
+
+.title {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.emailInput {
+    padding: 12px 15px;
+    border: 1px solid #666;
+    border-radius: 0;
+    font-size: 14px;
+    font-style: italic;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.emailInput:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.emailInput:disabled {
+    background: #e8e8e8;
+    cursor: not-allowed;
+}
+
+.subscribeBtn {
+    padding: 12px 30px;
+    border: 1px solid #666;
+    border-radius: 0;
+    background: white;
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: center;
+    width: auto;
+}
+
+.subscribeBtn:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.subscribeBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.successMessage {
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+}
+
+.errorMessage {
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: #dc3545;
+    text-align: center;
+}
+
+.dontShowBtn {
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 13px;
+    font-style: italic;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.dontShowBtn:hover {
+    color: #666;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, -40%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup {
+        padding: 25px 20px;
+        width: 95%;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+}

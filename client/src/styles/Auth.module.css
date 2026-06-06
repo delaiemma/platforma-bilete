@@ -1,0 +1,258 @@
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: white;
+}
+
+.authCard {
+    background: white;
+    border: 1px solid #000;
+    padding: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.authTitle {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 300;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.tab:hover {
+    color: #333;
+    background: #f8f8f8;
+}
+
+.activeTab {
+    color: #000;
+    border-bottom-color: #000;
+    font-weight: 400;
+}
+
+/* Form */
+.authForm {
+    margin-bottom: 30px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 16px;
+    font-style: italic;
+    transition: border-color 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 15px 40px;
+    background: white;
+    color: black;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.submitBtn:hover {
+    background: #f0f0f0;
+}
+
+.submitBtn:active {
+    transform: translateY(1px);
+}
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Messages */
+.error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 4px solid #d32f2f;
+    font-style: italic;
+}
+
+.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 12px;
+    border-radius: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 4px solid #4caf50;
+    font-style: italic;
+}
+
+/* Sign Out Section */
+.signOutSection {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.signOutBtn {
+    width: 100%;
+    padding: 15px 40px;
+    background: white;
+    color: black;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.signOutBtn:hover {
+    background: #f0f0f0;
+}
+
+.signOutBtn:active {
+    transform: translateY(1px);
+}
+
+/* Success Popup */
+.successPopup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.popupContent {
+    background: white;
+    border: 1px solid #000;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 300;
+}
+
+.closeBtn:hover {
+    color: #000;
+}
+
+.popupContent h2 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.popupContent p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .authContainer {
+        padding: 20px 15px;
+    }
+
+    .authCard {
+        padding: 30px 25px;
+        max-width: none;
+    }
+
+    .authTitle {
+        font-size: 28px;
+    }
+
+    .tab {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}

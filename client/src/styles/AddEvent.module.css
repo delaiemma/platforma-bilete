@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.addContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.addHeader {
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 32px;
+    font-style: italic;
+    color: #333;
+    font-weight: 300;
+}
+
+.addMain {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.addFormContainer {
+    background: white;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.addTitle {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.success {
+    color: #28a745;
+    text-align: center;
+    padding: 15px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 0;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.addForm {
+    margin-bottom: 30px;
+}
+
+.formRow {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup.half {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 16px;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.formGroup input[type="file"] {
+    padding: 8px 15px;
+    font-style: normal;
+}
+
+.formGroup input[type="date"],
+.formGroup input[type="time"] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator,
+.formGroup input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.error {
+    color: #dc3545;
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.imagePreview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+    border-radius: 0;
+    border: 1px solid #ddd;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btnPrimary {
+    background-color: white;
+    color: black;
+}
+
+.btnPrimary:hover {
+    background-color: #f0f0f0;
+}
+
+.btnPrimary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btnSecondary {
+    background-color: white;
+    color: #666;
+    border-color: #666;
+}
+
+.btnSecondary:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    border-color: #333;
+}
+
+.btnCancel {
+    background-color: white;
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btnCancel:hover {
+    background-color: #f8f9fa;
+    color: #c82333;
+    border-color: #c82333;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    .addHeader {
+        padding: 15px 20px;
+    }
+
+    .addFormContainer {
+        padding: 30px 20px;
+        margin: 0 20px;
+        max-width: none;
+    }
+
+    .formRow {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .formGroup.half {
+        margin-bottom: 20px;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

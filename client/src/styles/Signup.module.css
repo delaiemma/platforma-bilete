@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.signupContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.signupHeader {
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 32px;
+    font-style: italic;
+    color: #333;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+
+.signupMain {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.signupFormContainer {
+    background: white;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.signupTitle {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.signupForm {
+    margin-bottom: 30px;
+}
+
+.formRow {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup.half {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 16px;
+    font-style: italic;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.continueBtn {
+    width: 100%;
+    padding: 15px 40px;
+    background: white;
+    color: black;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.continueBtn:hover {
+    background: #f0f0f0;
+}
+
+.continueBtn:active {
+    transform: translateY(1px);
+}
+
+.continueBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loginLink {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.loginLink p {
+    margin: 0;
+}
+
+.backToLoginLink {
+    color: black;
+    text-decoration: underline;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.backToLoginLink:hover {
+    color: #333;
+}
+
+.footer {
+    background: linear-gradient(135deg, #d4a5d4, #c19ac1);
+    padding: 30px;
+    text-align: center;
+}
+
+.footerLogo {
+    font-size: 28px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footerText {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 12px;
+    color: #666;
+    flex-wrap: wrap;
+}
+
+.footerLinks a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footerLinks a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+    display: block;
+}
+
+.errorMessage {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 4px solid #d32f2f;
+}
+
+@media (max-width: 768px) {
+    .signupHeader,
+    .footer {
+        padding: 15px 20px;
+    }
+
+    .signupFormContainer {
+        padding: 30px 20px;
+        margin: 0 20px;
+        max-width: none;
+    }
+
+    .formRow {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .formGroup.half {
+        margin-bottom: 20px;
+    }
+
+    .footerLinks {
+        font-size: 11px;
+        gap: 10px;
+    }
+}

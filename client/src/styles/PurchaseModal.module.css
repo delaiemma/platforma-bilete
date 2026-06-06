@@ -1,0 +1,286 @@
+/* Purchase Modal - Matching original design */
+.purchaseModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modalContent {
+    background: white;
+    border: 2px solid #000;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Loading Content */
+.loadingContent {
+    padding: 40px;
+    text-align: center;
+    width: 400px;
+}
+
+.loadingContent h2 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.loadingContent p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.loadingSpinner {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #f3f3f3;
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingBar {
+    width: 100%;
+    height: 6px;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.loadingProgress {
+    height: 100%;
+    background: linear-gradient(90deg, #333, #666);
+    width: 0%;
+    transition: width 3s ease;
+}
+
+/* Success Content */
+.successContent {
+    padding: 30px;
+    width: 600px;
+}
+
+.successHeader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.successHeader h2 {
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.successHeader p {
+    font-size: 14px;
+    color: #666;
+}
+
+.ticketsContainer {
+    margin-bottom: 30px;
+}
+
+.ticketsContainer h3 {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.ticketSection {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f9f9f9;
+}
+
+.ticketSection h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.ticketDetails {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.ticketInfo {
+    flex: 1;
+}
+
+.ticketInfo p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.ticketInfo strong {
+    color: #333;
+}
+
+.qrCode {
+    text-align: center;
+}
+
+.qrCode img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: white;
+}
+
+.qrCode p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.actionButtons button {
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.downloadBtn {
+    background: white;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.downloadBtn:hover {
+    background: #f0f0f0;
+}
+
+.closeBtn {
+    background: white;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.closeBtn:hover {
+    background: #f0f0f0;
+}
+
+/* Payment Form */
+.paymentContent {
+    padding: 40px;
+    width: 480px;
+}
+
+.paymentContent h2 {
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.paymentAmount {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.cardField {
+    margin-bottom: 4px;
+}
+
+.cardLabel {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.paymentElementWrapper {
+    border: 1px solid #ccc;
+    padding: 14px 16px;
+    background: #fff;
+    margin-bottom: 16px;
+    border-radius: 2px;
+}
+
+.paymentError {
+    color: #c0392b;
+    font-size: 13px;
+    margin-bottom: 12px;
+    text-align: center;
+    padding: 8px;
+    background: #fdecea;
+    border: 1px solid #e74c3c;
+}
+
+.payBtn {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.payBtn:hover:not(:disabled) {
+    background: #333;
+}
+
+.payBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

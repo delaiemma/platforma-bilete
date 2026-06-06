@@ -1,0 +1,146 @@
+.homeContainer {
+    background: white;
+    width: 100%;
+}
+
+.recommendationsSection {
+    padding: 80px 40px 40px 40px;
+    background: white;
+    width: 100%;
+}
+
+.eventsSection {
+    padding: 60px 40px;
+    background: white;
+    width: 100%;
+}
+
+.eventsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+.eventsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.eventsTitle {
+    font-size: 32px;
+    font-style: italic;
+    color: #333;
+    font-weight: 300;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.clearSearchBtn {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.clearSearchBtn:hover {
+    background: #f0f0f0;
+}
+
+.eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 16px;
+}
+
+.noEvents {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 16px;
+}
+
+.moreEventsContainer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.moreEventsBtn {
+    padding: 15px 40px;
+    background: white;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.moreEventsBtn:hover {
+    background: #f0f0f0;
+}
+
+.addEventSection {
+    background: #f8f8f8;
+    padding: 40px;
+    text-align: center;
+}
+
+.addEventText {
+    font-size: 20px;
+    color: #555;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.addEventBtn {
+    padding: 15px 40px;
+    background: white;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.addEventBtn:hover {
+    background: #f0f0f0;
+}
+
+@media (max-width: 1200px) {
+    .eventsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .eventsSection {
+        padding: 40px 20px;
+    }
+
+    .eventsGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .eventsTitle {
+        font-size: 24px;
+    }
+
+    .eventsHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

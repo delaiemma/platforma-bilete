@@ -1,0 +1,265 @@
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: white;
+}
+
+.loginHeader {
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 32px;
+    font-style: italic;
+    color: #333;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.loginMain {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.loginFormContainer {
+    background: white;
+    border: 1px solid #000;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.loginTitle {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.loginForm {
+    margin-bottom: 30px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 16px;
+    font-style: italic;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.connectBtn {
+    width: 100%;
+    padding: 15px 40px;
+    background: white;
+    color: black;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.connectBtn:hover {
+    background: #f0f0f0;
+}
+
+.connectBtn:active {
+    transform: translateY(1px);
+}
+
+.connectBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.signupLink {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.signupLink p {
+    margin: 0;
+}
+
+.createAccountLink {
+    color: black;
+    text-decoration: underline;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.createAccountLink:hover {
+    color: #333;
+}
+
+.footer {
+    background: linear-gradient(135deg, #d4a5d4, #c19ac1);
+    padding: 30px;
+    text-align: center;
+}
+
+.footerLogo {
+    font-size: 28px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footerText {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 12px;
+    color: #666;
+    flex-wrap: wrap;
+}
+
+.footerLinks a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footerLinks a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+    display: block;
+}
+
+.errorMessage {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 4px solid #d32f2f;
+}
+
+.forgotPasswordText {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.successMessage {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.successMessage h3 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.successMessage p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.backToLogin {
+    display: inline-block;
+    margin-top: 20px;
+    color: #000;
+    text-decoration: underline;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.backToLogin:hover {
+    color: #333;
+}
+
+.notFoundContent {
+    margin-bottom: 30px;
+}
+
+.notFoundText {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .loginHeader,
+    .footer {
+        padding: 15px 20px;
+    }
+
+    .loginFormContainer {
+        padding: 30px 20px;
+        margin: 0 20px;
+        max-width: none;
+    }
+
+    .footerLinks {
+        font-size: 11px;
+        gap: 10px;
+    }
+}

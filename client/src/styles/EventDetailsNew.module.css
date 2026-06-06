@@ -1,0 +1,536 @@
+.eventMain {
+    flex: 1;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    line-height: normal;
+}
+
+.eventContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-left: -100px;
+}
+
+.topSection {
+    display: flex;
+    gap: 65px;
+    align-items: flex-start;
+}
+
+.eventImageContainer {
+    flex-shrink: 0;
+    width: 500px;
+}
+
+.eventImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.eventTitle {
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.expiredBanner {
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    width: 200px;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.soldOutBanner {
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    font-weight: 500;
+    width: 200px;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.joinWaitlistBtn {
+    padding: 12px 24px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+    width: 200px;
+    min-width: 200px;
+}
+
+.joinWaitlistBtn:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.joinWaitlistBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.waitlistInfo {
+    margin-top: 8px;
+}
+
+.waitlistPosition {
+    font-size: 13px;
+    font-style: italic;
+    color: #555;
+    margin: 0 0 8px 0;
+}
+
+.leaveWaitlistBtn {
+    padding: 12px 24px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+    width: 200px;
+    min-width: 200px;
+    color: #666;
+}
+
+.leaveWaitlistBtn:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.leaveWaitlistBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.eventInfo {
+    margin-bottom: 20px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 16px;
+    width: 20px;
+}
+
+.venue {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 2px;
+    color: #000;
+}
+
+.address,
+.datetime,
+.price {
+    color: #000;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.buttonsContainer {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.adminControls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.addToCartBtn,
+.addToFavouritesBtn,
+.adminBtn {
+    padding: 12px 24px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    font-style: italic;
+    font-weight: 300;
+    border-radius: 0;
+    font-size: 14px;
+    transition: all 0.3s;
+    width: 200px;
+    min-width: 200px;
+}
+
+.addToCartBtn:hover,
+.addToFavouritesBtn:hover,
+.adminBtn:hover {
+    background: #f0f0f0;
+}
+
+.addToCartBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.addToCartBtn.isInCart {
+    background: #333 !important;
+    color: white !important;
+    border-color: #333 !important;
+}
+
+.addToCartBtn.isInCart:hover {
+    background: #555 !important;
+    border-color: #555 !important;
+}
+
+.mapContainer {
+    flex-shrink: 0;
+    width: 600px;
+}
+
+.mapTitle {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mapContainer iframe {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.directionsLink {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background: white;
+    color: #000 !important;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.directionsLink:visited {
+    color: #000 !important;
+}
+
+.directionsLink:hover {
+    background: #f0f0f0;
+    color: #000 !important;
+}
+
+.bottomSection {
+    margin-top: -300px;
+    max-width: 600px;
+}
+
+.organizerInfo {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #000;
+    font-size: 24px;
+    font-weight: 350;
+}
+
+.eventDescription {
+    font-size: 24px;
+    font-weight: 350;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.eventDescription p {
+    line-height: 1.6;
+    color: #000;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+}
+
+.error h2 {
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.error p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.navBtn {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.navBtn:hover {
+    background: #f0f0f0;
+}
+
+/* ── Reviews ──────────────────────────────────── */
+.reviewsSection {
+    margin-top: 60px;
+    max-width: 760px;
+    margin-left: -100px;
+}
+
+.reviewsHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 16px;
+}
+
+.reviewsTitle {
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: #333;
+    margin: 0;
+}
+
+.reviewsSummary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avgRating {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.starsDisplay,
+.reviewStars,
+.starPicker {
+    display: inline-flex;
+    gap: 2px;
+    font-size: 20px;
+}
+
+.starFilled {
+    color: #333;
+}
+
+.starEmpty {
+    color: #ccc;
+}
+
+.totalReviews {
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Form */
+.reviewForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background: #fafafa;
+}
+
+.starPicker {
+    font-size: 28px;
+}
+
+.reviewTextarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+    resize: vertical;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.reviewTextarea:focus {
+    border-color: #999;
+}
+
+.reviewFormActions {
+    display: flex;
+    gap: 12px;
+}
+
+.submitReviewBtn {
+    padding: 10px 24px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.submitReviewBtn:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.submitReviewBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.deleteReviewBtn {
+    padding: 10px 24px;
+    border: 1px solid #c00;
+    background: white;
+    color: #c00;
+    cursor: pointer;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.deleteReviewBtn:hover {
+    background: #c00;
+    color: white;
+}
+
+.reviewNote {
+    font-size: 13px;
+    font-style: italic;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+/* List */
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.reviewCard {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.reviewTop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.reviewUser {
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+}
+
+.reviewDate {
+    font-size: 12px;
+    color: #bbb;
+    font-style: italic;
+    margin-left: auto;
+}
+
+.reviewComment {
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    color: #444;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.noReviews {
+    font-size: 14px;
+    font-style: italic;
+    color: #bbb;
+}
+
+@media (max-width: 768px) {
+    .eventContent {
+        margin-left: 0;
+    }
+
+    .topSection {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .eventImageContainer,
+    .mapContainer {
+        width: 100%;
+    }
+
+    .buttonsContainer {
+        grid-template-columns: 1fr;
+        max-width: 200px;
+    }
+
+    .bottomSection {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .reviewsSection {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}

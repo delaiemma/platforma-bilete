@@ -1,0 +1,399 @@
+/* Interactive seat map — customer facing */
+
+/* Accessibility confirmation dialog */
+.accessibilityOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.accessibilityDialog {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 32px 36px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+}
+
+.accessibilityDialogText {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+.accessibilityDialogSub {
+    font-size: 13px;
+    font-style: italic;
+    color: #888;
+    margin: 0 0 24px 0;
+}
+
+.accessibilityDialogActions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.accessibilityConfirmBtn {
+    padding: 10px 24px;
+    border: 1px solid #333;
+    background: #333;
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.accessibilityConfirmBtn:hover {
+    background: #555;
+    border-color: #555;
+}
+
+.accessibilityCancelBtn {
+    padding: 10px 24px;
+    border: 1px solid #ccc;
+    background: white;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.accessibilityCancelBtn:hover {
+    background: #f5f5f5;
+}
+
+/* Recommendation box */
+.recommendBox {
+    border: 1px solid #eee;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    background: #fafaf8;
+}
+
+.recommendTitle {
+    font-size: 13px;
+    font-style: italic;
+    color: #999;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.recommendForm {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.recommendField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.recommendLabel {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #999;
+    font-style: italic;
+}
+
+.recommendInput {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 14px;
+    width: 90px;
+    font-family: inherit;
+    outline: none;
+}
+
+.recommendInput:focus {
+    border-color: #333;
+}
+
+.recommendBtn {
+    padding: 9px 22px;
+    border: 1px solid #333;
+    background: white;
+    font-size: 13px;
+    font-style: italic;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.recommendBtn:hover:not(:disabled) {
+    background: #333;
+    color: white;
+}
+
+.recommendBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.recommendError {
+    font-size: 13px;
+    font-style: italic;
+    color: #c0392b;
+    margin: 10px 0 0 0;
+}
+
+.seatMapContainer {
+    background: white;
+    border: 1px solid black;
+    padding: 25px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.seatMapHeader {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.seatMapTitle {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.summary {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+}
+
+.summaryPrice {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+}
+
+.legendDot {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.legendAvailable { background: #4BC0C0; }
+.legendSelected { background: #616161; border: 2px solid #424242; }
+.legendReserved { background: #9E9E9E; }
+.legendSold { background: #9E9E9E; }
+
+/* Stage */
+.stage {
+    text-align: center;
+    border: 1px solid #999;
+    display: inline-block;
+    margin: 0 auto 18px;
+    padding: 5px 60px;
+    font-size: 11px;
+    font-style: italic;
+    color: #666;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.stageWrapper {
+    text-align: center;
+}
+
+/* Seat grid */
+.seatGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.seatRow {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rowLabel {
+    width: 28px;
+    text-align: right;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 600;
+    color: #555;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* Individual seat */
+.seat {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    user-select: none;
+    position: relative;
+}
+
+.seatAvailable {
+    cursor: pointer;
+}
+
+.seatAvailable:hover {
+    transform: scale(1.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.seatSelected {
+    cursor: pointer;
+    background: #616161 !important;
+    box-shadow: 0 0 0 2px #424242;
+}
+
+.seatSelected:hover {
+    transform: scale(1.12);
+}
+
+.seatReserved {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.seatSold {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Tooltip on hover (seat info) */
+.seat[title] {
+    position: relative;
+}
+
+/* Add to cart button */
+.addToCartSection {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+}
+
+.addToCartBtn {
+    padding: 12px 32px;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 15px;
+    font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.addToCartBtn:hover {
+    background: #f0f0f0;
+}
+
+.addToCartBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Selected seats summary */
+.selectedSeatsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.seatBadge {
+    background: #616161;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.seatBadgeZone {
+    font-weight: 300;
+    opacity: 0.85;
+}
+
+/* Error / info messages */
+.infoMessage {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    padding: 30px 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .seatMapContainer {
+        padding: 15px 10px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .seat {
+        width: 26px;
+        height: 26px;
+        font-size: 9px;
+    }
+
+    .rowLabel {
+        width: 20px;
+        font-size: 11px;
+    }
+
+    .stage {
+        padding: 4px 30px;
+    }
+}

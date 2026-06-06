@@ -1,0 +1,228 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+}
+
+.backBtn {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.backBtn:hover {
+    background: #f0f0f0;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.error h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.error p {
+    margin-bottom: 20px;
+}
+
+.eventDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.eventImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eventInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.favoriteBtn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.favoriteBtn:hover {
+    transform: scale(1.1);
+}
+
+.favoriteBtn.active {
+    animation: heartBeat 0.3s ease-in-out;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.type {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #f8f9fa;
+    color: #666;
+    font-size: 14px;
+    border-radius: 12px;
+    text-transform: capitalize;
+    align-self: flex-start;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.value {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.freePrice {
+    color: #28a745;
+}
+
+.soldOut {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.description {
+    padding: 20px 0;
+}
+
+.description h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    white-space: pre-wrap;
+}
+
+.actions {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.addToCartBtn {
+    width: 100%;
+    padding: 15px 30px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.addToCartBtn:hover:not(.disabled) {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.addToCartBtn.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .eventDetails {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imageContainer {
+        height: 300px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .favoriteBtn {
+        font-size: 24px;
+    }
+
+    .description h2 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .success {
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clear Browser Storage</h1>
+    <p>This will clear all localStorage data for this application.</p>
+    <button onclick="clearStorage()">Clear Storage</button>
+    <div id="result"></div>
+
+    <script>
+        function clearStorage() {
+            try {
+                localStorage.clear();
+                document.getElementById('result').innerHTML =
+                    '<p class="success">✅ Storage cleared successfully!</p>' +
+                    '<p>You can now <a href="/">go back to the app</a> and login again.</p>';
+            } catch (error) {
+                document.getElementById('result').innerHTML =
+                    '<p style="color: red;">❌ Error: ' + error.message + '</p>';
+            }
+        }
+
+        // Show current storage
+        window.onload = function() {
+            const keys = Object.keys(localStorage);
+            if (keys.length > 0) {
+                console.log('Current localStorage keys:', keys);
+            }
+        }
+    </script>
+</body>
+</html>

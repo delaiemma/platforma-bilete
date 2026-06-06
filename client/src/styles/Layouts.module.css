@@ -1,0 +1,494 @@
+/* Shared admin layout styles — matches the italic/border-black site aesthetic */
+
+.pageContainer {
+    min-height: 100vh;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    padding: 30px 20px;
+}
+
+.pageTitle {
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.pageSubtitle {
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.btnPrimary {
+    background: white;
+    color: black;
+}
+
+.btnPrimary:hover {
+    background: #f0f0f0;
+}
+
+.btnPrimary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btnSecondary {
+    background: white;
+    color: #666;
+    border-color: #666;
+}
+
+.btnSecondary:hover {
+    background: #f5f5f5;
+    color: #333;
+    border-color: #333;
+}
+
+.btnDanger {
+    background: white;
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btnDanger:hover {
+    background: #fff5f5;
+}
+
+.btnSmall {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Cards grid */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 20px;
+    background: white;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.cardDesc {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 12px;
+    min-height: 18px;
+}
+
+.cardMeta {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.cardActions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Empty state */
+.emptyState {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+    font-style: italic;
+}
+
+.emptyIcon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+/* Form container */
+.formContainer {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 40px;
+    background: white;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 16px;
+    font-style: italic;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+}
+
+.formRow {
+    display: flex;
+    gap: 15px;
+}
+
+.formRow .formGroup {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.success {
+    color: #28a745;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 12px 15px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Zone & row tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table th {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: #888;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    padding: 10px 12px;
+    font-size: 14px;
+    font-style: italic;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.colorSwatch {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.addRowInline {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.addRowInline .formGroup {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 100px;
+}
+
+/* Seat map preview */
+.previewSection {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.previewTitle {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.seatPreviewGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.seatPreviewRow {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.seatPreviewRowLabel {
+    width: 24px;
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+    text-align: right;
+    margin-right: 6px;
+}
+
+.seatPreviewSeat {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: white;
+    font-weight: 600;
+}
+
+.legendRow {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+}
+
+.legendSwatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+}
+
+/* Table for discounts */
+.tableContainer {
+    overflow-x: auto;
+    border: 1px solid #000;
+    background: white;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    color: #888;
+    border-bottom: 2px solid #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #fafafa;
+}
+
+.table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    font-style: italic;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: #f8f8f8;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    font-style: normal;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+    background-color: #28a745;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.switch input:disabled + .slider {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .formContainer {
+        padding: 25px 18px;
+    }
+
+    .formRow {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .formRow .formGroup {
+        margin-bottom: 20px;
+    }
+
+    .addRowInline {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .addRowInline .formGroup {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .seatPreviewSeat {
+        width: 18px;
+        height: 18px;
+        font-size: 7px;
+    }
+}

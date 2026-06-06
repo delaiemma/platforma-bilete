@@ -1,0 +1,317 @@
+.myTicketsContainer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 60vh;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 36px;
+}
+
+/* Ticket list - single column */
+.ticketsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Ticket card (horizontal) --- */
+.ticketCard {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Notch cutout effect top & bottom */
+.ticketCard::before,
+.ticketCard::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.ticketCard::before { left: 192px; }
+.ticketCard::after  { left: 192px; box-shadow: inset 0 0 0 1px #ddd; }
+
+/* Event image strip */
+.eventImage {
+  width: 200px;
+  min-width: 200px;
+  background: #e5e7eb;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.eventImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #444 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Info section */
+.ticketInfo {
+  flex: 1;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.eventTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 14px 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.infoRow span:first-child {
+  font-size: 0.9rem;
+  min-width: 18px;
+}
+
+.seatBadge {
+  display: inline-block;
+  background: #1a1a1a;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+.ticketIdText {
+  font-size: 0.72rem;
+  color: #bbb;
+  margin-top: 10px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+/* Dashed divider */
+.divider {
+  width: 1px;
+  border-left: 2px dashed #ddd;
+  margin: 16px 0;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* QR section */
+.ticketQr {
+  width: 150px;
+  min-width: 150px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ticketQr img {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #eee;
+  padding: 4px;
+  background: white;
+  display: block;
+}
+
+.qrLabel {
+  font-size: 0.72rem;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+.downloadBtn {
+  width: 100%;
+  padding: 8px 0;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.downloadBtn:hover {
+  background: #333;
+}
+
+.cancelBtn {
+  width: 100%;
+  padding: 8px 0;
+  background: transparent;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+.cancelBtn:hover {
+  background: #c0392b;
+  color: white;
+}
+
+.cancelBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Multiple QR codes (seat-based) */
+.multiQr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.multiQr img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Empty, loading, error states */
+.emptyState,
+.loadingState,
+.errorState {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.emptyState h2,
+.errorState h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.emptyState p,
+.loadingState p,
+.errorState p {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.browseBtn {
+  display: inline-block;
+  padding: 10px 28px;
+  background: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.browseBtn:hover {
+  background: #333;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .ticketCard {
+    flex-direction: column;
+  }
+
+  .ticketCard::before,
+  .ticketCard::after {
+    display: none;
+  }
+
+  .eventImage {
+    width: 100%;
+    height: 140px;
+    min-width: unset;
+  }
+
+  .divider {
+    width: auto;
+    height: 1px;
+    border-left: none;
+    border-top: 2px dashed #ddd;
+    margin: 0 16px;
+  }
+
+  .ticketQr {
+    width: 100%;
+    flex-direction: row;
+    padding: 16px;
+  }
+}
