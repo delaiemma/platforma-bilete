@@ -44,7 +44,7 @@ function EditEvent() {
   const [ticketError, setTicketError] = useState('');
   const [ticketWarning, setTicketWarning] = useState('');
   const [ticketInfo, setTicketInfo] = useState('');
-  const [hasSeating, setHasSeating] = useState(false);
+
   const [seatingOption, setSeatingOption] = useState('none');
   const [predefinedVenues, setPredefinedVenues] = useState([]);
   const [loadingVenues, setLoadingVenues] = useState(true);
@@ -107,8 +107,6 @@ function EditEvent() {
         image: null
       });
 
-      setHasSeating(event.has_seating || false);
-
       if (event.has_seating && event.layout_id) {
         setSeatingOption(event.layout_id.toString());
       } else if (event.has_seating) {
@@ -134,7 +132,7 @@ function EditEvent() {
             });
             setZonePrices(prices);
           }
-        } catch (e) {}
+        } catch { /* intentionally empty */ }
       } else {
         const basePrice = parseFloat(event.price) || 50;
         setVenueZones([
@@ -150,6 +148,7 @@ function EditEvent() {
       }
     };
     loadExistingLayout();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [event?.event_id]);
 
   useEffect(() => {
@@ -197,6 +196,7 @@ function EditEvent() {
       }
     };
     updateForVenue();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seatingOption, isInitialLoad]);
 
   useEffect(() => {
@@ -354,7 +354,7 @@ function EditEvent() {
 
         await eventLayoutAPI.assign(eventId, createdLayout.layout_id, zonePricing);
 
-        console.log('✅ Created random layout for event ${eventId}');
+        console.log(`✅ Created random layout for event ${eventId}`);
       }
     } catch (error) {
       console.error('Error setting up seating:', error);
