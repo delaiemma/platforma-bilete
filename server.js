@@ -124,10 +124,8 @@ app.use(express.urlencoded({ extended: true }));
 
 /**
  * Static File Serving Middleware
- * Serves CSS, JavaScript, images, and uploaded files from their respective directories.
+ * Serves images and uploaded files from their respective directories.
  */
-app.use('/css', express.static(path.join(__dirname, 'public/css')));
-app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
