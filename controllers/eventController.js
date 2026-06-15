@@ -357,6 +357,38 @@ exports.updateEvent = async (req, res) => {
             }
         }
 
+        if (event.has_seating) {
+            const seatLayoutResult = await pool.query(
+                'SELECT el.layout_id FROM event_layouts el WHERE el.event_id = $1',
+                [id]
+            );
+
+            if (seatLayoutResult.rows.length > 0) {
+                const layoutId = seatLayoutResult.rows[0].layout_id;
+
+                const capacityResult = await pool.query(
+                    'SELECT COALESCE(SUM(seats_in_row), 0) AS total FROM layout_rows WHERE layout_id = $1',
+                    [layoutId]
+                );
+                const totalCapacity = parseInt(capacityResult.rows[0].total);
+
+                const soldResult = await pool.query(
+                    `SELECT COUNT(*) FROM ticket_seats ts
+                     JOIN purchases p ON ts.purchase_id = p.purchase_id
+                     WHERE p.event_id = $1 AND (p.status IS NULL OR p.status != 'cancelled')`,
+                    [id]
+                );
+                const soldSeats = parseInt(soldResult.rows[0].count);
+
+                const correctAvailable = Math.max(0, totalCapacity - soldSeats);
+                if (event.available_tickets !== correctAvailable) {
+                    console.log(`🔧 Correcting available_tickets for event ${id}: ${event.available_tickets} → ${correctAvailable} (capacity ${totalCapacity} - sold ${soldSeats})`);
+                    await pool.query('UPDATE event SET available_tickets = $1 WHERE event_id = $2', [correctAvailable, id]);
+                    event.available_tickets = correctAvailable;
+                }
+            }
+        }
+
         console.log('✅ Event updated:', event.title);
 
         const io = req.app.get('io');

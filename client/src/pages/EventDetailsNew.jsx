@@ -49,7 +49,8 @@ function EventDetailsNew() {
     try {
       const data = await waitlistAPI.getStatus(eventId);
       setWaitlistStatus(data);
-    } catch (err) {
+    } catch {
+      setWaitlistStatus(null);
     }
   }, [eventId, isAuthenticated]);
 
@@ -160,16 +161,17 @@ function EventDetailsNew() {
     if (!event?.date) return false;
 
     try {
-      let eventDateTime;
+      const eventDate = new Date(event.date);
+      const [hours, minutes, seconds] = (event.time || '00:00:00').split(':').map(Number);
 
-      if (typeof event.date === 'string' && event.date.includes('T')) {
-        eventDateTime = new Date(event.date);
-      } else {
-        const datePart = event.date.split('T')[0];
-        const timePart = event.time || '00:00:00';
-        const eventDateTimeStr = `${datePart}T${timePart}`;
-        eventDateTime = new Date(eventDateTimeStr);
-      }
+      const eventDateTime = new Date(
+        eventDate.getFullYear(),
+        eventDate.getMonth(),
+        eventDate.getDate(),
+        hours || 0,
+        minutes || 0,
+        seconds || 0
+      );
 
       return eventDateTime < new Date();
     } catch (error) {
@@ -365,7 +367,7 @@ function EventDetailsNew() {
                 <div className={styles.expiredBanner}>
                   ⏰ This event has ended
                 </div>
-              ) : soldOut && !event.has_seating ? (
+              ) : soldOut ? (
                 <div className={styles.actionButtons}>
                   <div className={styles.soldOutBanner}>
                     🎟️ SOLD OUT

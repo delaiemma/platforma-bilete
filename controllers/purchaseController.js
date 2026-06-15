@@ -234,7 +234,7 @@ exports.processPurchase = async (req, res) => {
                 );
 
                 await client.query(
-                    'UPDATE event SET tickets_sold = tickets_sold + $1 WHERE event_id = $2',
+                    'UPDATE event SET available_tickets = available_tickets - $1, tickets_sold = tickets_sold + $1 WHERE event_id = $2',
                     [seats.length, eventId]
                 );
 
@@ -438,7 +438,9 @@ exports.processPurchase = async (req, res) => {
             }
         }
 
-        await Waitlist.markPurchased(eventId, userId).catch(() => {});
+        for (const ticket of purchasedTickets) {
+            await Waitlist.markPurchased(ticket.event.event_id, userId).catch(() => {});
+        }
 
         res.json({
             success: true,
