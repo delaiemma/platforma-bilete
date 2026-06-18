@@ -52,7 +52,7 @@ const server = http.createServer(app);
  */
 const io = require('socket.io')(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: ["http://localhost:5173", "http://localhost:3000"],
         methods: ["GET", "POST"]
     }
 });
@@ -111,7 +111,7 @@ startReservationCleanup(io);
  * Allows credentials (cookies, authorization headers) to be included in requests.
  */
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'http://localhost:3000'],
     credentials: true
 }));
 
@@ -176,6 +176,11 @@ app.get('/test', (req, res) => {
         message: 'API server working!',
         timestamp: new Date()
     });
+});
+
+app.use(express.static(path.join(__dirname, 'client/dist')));
+app.get('/{*path}', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
 });
 
 /**
